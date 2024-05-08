@@ -22,7 +22,7 @@ function App() {
               path="/Categoria/Pizzas"
               element=<h1>listado de Pizzas</h1>
             />
-            <Route path="/Cart" element=<h1>Carrito</h1> />
+            <Route path="/Cart" element=<h1> Carrito </h1> />
           </Routes>
         </Layout>
       </BrowserRouter>
