@@ -1,8 +1,10 @@
 import React from "react";
+import ItemCount from "./ItemCount";
+import "../styles/Item.css";
 
 const ItemDetail = ({ producto }) => {
   return (
-    <div key={producto.id}>
+    <div>
       <div className="cartContainer">
         <img
           className="cartImg"

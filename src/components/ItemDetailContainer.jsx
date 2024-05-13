@@ -1,25 +1,17 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
-import useProduct from "../hooks/useProduct";
-import { getProductById } from "../mock/asyncMock";
 import ItemDetail from "./ItemDetail";
+import useProductById from "../hooks/useProductById";
 
 const ItemDetailContainer = () => {
-  const { producto, setProducto, cargando, setCargando } = useProduct();
-
   const { productoId } = useParams();
 
-  useEffect(() => {
-    if (productoId) {
-      getProductById(productoId)
-        .then((data) => {
-          setProducto(data);
-        })
-        .finally(() => setCargando(false));
-    }
-  }, []);
+  const { producto, cargando } = useProductById(productoId);
+  console.log(producto);
 
   if (cargando) return <h1 className="cargando">Cargando...</h1>;
+
+  if (!producto) return <h1>No existe el producto</h1>;
 
   return (
     <div>
