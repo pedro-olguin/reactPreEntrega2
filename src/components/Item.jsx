@@ -14,11 +14,15 @@ const Item = ({ item }) => {
 
   return (
     <div>
-      <Link to={`/producto/${item.id}`}>
+      <div>
         <div className="cartContainer">
-          <img className="cartImg" src={item.img} alt={item.descripcion} />
+          <Link to={`/producto/${item.id}`}>
+            <img className="cartImg" src={item.img} alt={item.descripcion} />
+          </Link>
           <div className="cartText">
-            <h4>{item.titulo}</h4>
+            <Link to={`/producto/${item.id}`}>
+              <h4>{item.titulo}</h4>
+            </Link>
             <p>{item.descripcion}</p>
             <p>${item.precio}</p>
             <div>
@@ -34,7 +38,7 @@ const Item = ({ item }) => {
             </button>
           </div>
         </div>
-      </Link>
+      </div>
     </div>
   );
 };
