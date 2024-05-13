@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import "../styles/CategoryList.css";
 
 const Rutas = [
-  { path: "/Home", label: "Home" },
+  { path: "/", label: "Home" },
   { path: "/Categoria/Lomos", label: "Lomos" },
   { path: "/Categoria/Hamburguesas", label: "Hamburguesas" },
   { path: "/Categoria/Pizzas", label: "Pizzas" },
@@ -10,9 +10,9 @@ const Rutas = [
 function CategoryList() {
   return (
     <nav>
-      <ul key={Rutas.id} className="category--list">
+      <ul className="category--list">
         {Rutas.map((ruta) => (
-          <li>
+          <li key={ruta.path}>
             <NavLink
               className={({ isActive }) => (isActive ? "active-link" : "")}
               to={ruta.path}

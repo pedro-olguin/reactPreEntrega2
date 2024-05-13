@@ -2,6 +2,9 @@ import "./styles/App.css";
 import Layout from "./components/Layout";
 import ItemListContainer from "./components/ItemListContainer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import NotFound from "./views/NotFound";
+import Cart from "./views/Cart";
+import ItemDetailContainer from "./components/ItemDetailContainer";
 
 function App() {
   return (
@@ -10,19 +13,21 @@ function App() {
         <Layout>
           <Routes>
             <Route
-              path={"/" && "/Home"}
+              path={"/"}
               element={<ItemListContainer contenido={"Comprá Online!"} />}
             />
-            <Route path="/Categoria/Lomos" element=<h1>listado de Lomos</h1> />
             <Route
-              path="/Categoria/Hamburguesas"
-              element=<h1>listado de Hamburguesas</h1>
+              path="/Categoria/:categoryName"
+              element={<ItemListContainer contenido={"Comprá Online!"} />}
             />
+
             <Route
-              path="/Categoria/Pizzas"
-              element=<h1>listado de Pizzas</h1>
+              path="/Producto/:productoId"
+              element={<ItemDetailContainer />}
             />
-            <Route path="/Cart" element=<h1> Carrito </h1> />
+            <Route path="/Cart" element={<Cart />} />
+
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>
       </BrowserRouter>

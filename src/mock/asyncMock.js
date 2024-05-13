@@ -97,3 +97,11 @@ export const getProductById = (id) => {
     }, 2000);
   });
 };
+
+export const getProductByCategory = (categoria) => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(productos.filter((producto) => producto.categoria === categoria));
+    }, 2000);
+  });
+};

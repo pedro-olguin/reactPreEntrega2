@@ -11,5 +11,5 @@ export default function useProducts() {
       .finally(() => setCargando(false));
   }, []);
 
-  return { productos, cargando };
+  return { productos, setProductos, cargando, setCargando };
 }

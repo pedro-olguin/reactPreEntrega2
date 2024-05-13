@@ -3,7 +3,7 @@ import "../styles/Brand.css";
 
 function Brand() {
   return (
-    <Link className="logo--title" to="/Home">
+    <Link className="logo--title" to="/">
       <img
         src="./src/assets/logoletras.png"
         alt="Logo Sabor A Rico"
