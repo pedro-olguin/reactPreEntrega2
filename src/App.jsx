@@ -3,7 +3,7 @@ import Layout from "./components/Layout";
 import ItemListContainer from "./components/ItemListContainer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NotFound from "./views/NotFound";
-import Cart from "./views/Cart";
+import CartContainer from "./views/CartContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 
 function App() {
@@ -25,7 +25,7 @@ function App() {
               path="/Producto/:productoId"
               element={<ItemDetailContainer />}
             />
-            <Route path="/Cart" element={<Cart />} />
+            <Route path="/Cart" element={<CartContainer />} />
 
             <Route path="*" element={<NotFound />} />
           </Routes>

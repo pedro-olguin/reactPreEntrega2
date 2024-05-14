@@ -8,9 +8,9 @@ export default function useProductById(productoId) {
 
   useEffect(() => {
     getProductById(productoId)
-      .then((producto) => {
-        console.log({ producto });
-        setProducto(producto);
+      .then((data) => {
+        console.log({ productoId });
+        setProducto(data);
       })
       .finally(() => {
         setCargando(false);
